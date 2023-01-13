@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_19_113221) do
+ActiveRecord::Schema.define(version: 2023_01_13_164236) do
 
   create_table "games", force: :cascade do |t|
     t.string "title"
@@ -21,10 +21,11 @@ ActiveRecord::Schema.define(version: 2021_07_19_113221) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer "score"
-    t.string "comment"
-    t.integer "game_id"
+# Could not dump table "reviews" because of following StandardError
+#   Unknown type 'ineger' for column 'user_id'
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
